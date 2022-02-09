@@ -30,6 +30,6 @@ output "public_dns_name" {
 }
 
 output "private_key" {
-  value = tls_private_key.boundary.private_key_pem
+  value     = tls_private_key.boundary.private_key_pem
   sensitive = true
 }
