@@ -63,4 +63,5 @@ resource "azurerm_linux_virtual_machine" "backend" {
     version   = "latest"
   }
 
+  tags = var.remote_host_tags
 }

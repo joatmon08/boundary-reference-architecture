@@ -83,6 +83,11 @@ resource "random_id" "id" {
   byte_length = 4
 }
 
+variable "remote_host_tags" {
+  type    = map(string)
+  default = {}
+}
+
 locals {
   resource_group_name = "boundary-${random_id.id.hex}"
 
