@@ -4,12 +4,6 @@ resource "tls_private_key" "boundary" {
   rsa_bits  = "2048"
 }
 
-# Write private key out to a file
-resource "local_file" "private_key" {
-  content  = tls_private_key.boundary.private_key_pem
-  filename = "${path.root}/azure_vms_private_key.pem"
-}
-
 # Create User Identities for Controller VMs and Worker VMs
 # Could probably do this with a loop
 resource "azurerm_user_assigned_identity" "controller" {

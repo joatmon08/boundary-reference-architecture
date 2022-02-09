@@ -1,8 +1,4 @@
 
-# Get your current IP address to provide access to Key Vault in the network acls
-data "http" "my_ip" {
-  url = "http://ifconfig.me"
-}
 
 # Create key vault and access policies
 resource "azurerm_key_vault" "boundary" {
@@ -21,7 +17,7 @@ resource "azurerm_key_vault" "boundary" {
   network_acls {
     default_action             = "Deny"
     bypass                     = "AzureServices"
-    ip_rules                   = ["${data.http.my_ip.body}/32"]
+    ip_rules                   = ["0.0.0.0/0"]
     virtual_network_subnet_ids = [module.vnet.vnet_subnets[0], module.vnet.vnet_subnets[1]]
 
   }

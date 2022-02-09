@@ -28,3 +28,8 @@ output "target_ips" {
 output "public_dns_name" {
   value = azurerm_public_ip.boundary.fqdn
 }
+
+output "private_key" {
+  value = tls_private_key.boundary.private_key_pem
+  sensitive = true
+}
