@@ -1,6 +1,10 @@
 # These outputs are used by the Boundary terraform config as inputs
 # to perform the initial configuration of Boundary
 
+output "resource_group_name" {
+  value = local.resource_group_name
+}
+
 output "vault_name" {
   value = local.vault_name
 }
