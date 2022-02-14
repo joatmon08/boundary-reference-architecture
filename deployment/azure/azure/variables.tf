@@ -5,6 +5,11 @@ variable "location" {
   default = "eastus"
 }
 
+variable "sql_service_tag" {
+  type    = string
+  default = "Sql.EastUS"
+}
+
 variable "address_space" {
   type    = list(string)
   default = ["10.0.0.0/16"]
