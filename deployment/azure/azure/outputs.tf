@@ -5,6 +5,10 @@ output "resource_group_name" {
   value = local.resource_group_name
 }
 
+output "resource_group_location" {
+  value = var.location
+}
+
 output "vault_name" {
   value = local.vault_name
 }
@@ -36,4 +40,8 @@ output "public_dns_name" {
 output "private_key" {
   value     = tls_private_key.boundary.private_key_pem
   sensitive = true
+}
+
+output "worker_subnet_id" {
+  value = module.vnet.vnet_subnets[1]
 }

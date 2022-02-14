@@ -26,7 +26,7 @@ module "vnet" {
   # Only the controller subnet needs DB access
   subnet_service_endpoints = {
     (var.subnet_names[0]) = ["Microsoft.KeyVault", "Microsoft.Sql"]
-    (var.subnet_names[1]) = ["Microsoft.KeyVault"]
+    (var.subnet_names[1]) = ["Microsoft.KeyVault", "Microsoft.Sql"]
   }
 }
 

@@ -83,8 +83,8 @@ resource "random_id" "id" {
   byte_length = 4
 }
 
-resource "random_pet" "vault" {
-  length = 1
+resource "random_id" "vault" {
+  byte_length = 2
 }
 
 variable "remote_host_tags" {
@@ -117,7 +117,7 @@ locals {
   pip_name = "boundary-${random_id.id.hex}"
   lb_name  = "boundary-${random_id.id.hex}"
 
-  vault_name = "boundary-${random_id.id.hex}-${random_pet.vault.id}"
+  vault_name = "boundary-${random_id.id.hex}-${random_id.vault.hex}"
 
   pg_name = "boundary-${random_id.id.hex}"
 
