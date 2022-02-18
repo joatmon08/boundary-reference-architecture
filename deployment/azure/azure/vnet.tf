@@ -23,10 +23,10 @@ module "vnet" {
   subnet_names        = var.subnet_names
 
   # Service endpoints used for Key Vault and Postgres DB access
-  # Only the controller subnet needs DB access
   subnet_service_endpoints = {
     (var.subnet_names[0]) = ["Microsoft.KeyVault", "Microsoft.Sql"]
     (var.subnet_names[1]) = ["Microsoft.KeyVault", "Microsoft.Sql"]
+    (var.subnet_names[2]) = ["Microsoft.Sql"]
   }
 
   subnet_enforce_private_link_endpoint_network_policies = {

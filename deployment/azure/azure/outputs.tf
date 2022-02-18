@@ -45,3 +45,7 @@ output "private_key" {
 output "worker_subnet_id" {
   value = module.vnet.vnet_subnets[1]
 }
+
+output "backend_subnet_id" {
+  value = module.vnet.vnet_subnets[2]
+}

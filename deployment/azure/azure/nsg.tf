@@ -186,7 +186,7 @@ resource "azurerm_network_security_rule" "backend_nics_1433" {
   protocol                              = "Tcp"
   source_port_range                     = "*"
   destination_port_range                = "1433"
-  source_application_security_group_ids = [azurerm_application_security_group.worker_asg.id]
+  source_application_security_group_ids = [azurerm_application_security_group.worker_asg.id, azurerm_application_security_group.backend_asg.id]
   destination_address_prefix            = var.sql_service_tag
   resource_group_name                   = azurerm_resource_group.boundary.name
   network_security_group_name           = azurerm_network_security_group.backend_nics.name
