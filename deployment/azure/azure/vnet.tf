@@ -28,10 +28,6 @@ module "vnet" {
     (var.subnet_names[1]) = ["Microsoft.KeyVault", "Microsoft.Sql"]
     (var.subnet_names[2]) = ["Microsoft.Sql"]
   }
-
-  subnet_enforce_private_link_endpoint_network_policies = {
-    (var.subnet_names[1]) = true
-  }
 }
 
 # Create Network Security Groups for subnets
